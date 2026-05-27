@@ -28,8 +28,10 @@
   </header>
 
   <main>
-    <!-- Hero: destaque inicial -->
-    <section class="hero" id="hero">
+    <!-- Hero: destaque inicial com imagem de fundo -->
+    <section class="hero" id="hero" style="background-image: url('assets/images/destaque.jpg');">
+      <!-- Overlay escuro para melhor legibilidade do texto -->
+      <div class="hero-overlay"></div>
       <div class="container hero-inner">
         <div class="hero-content">
           <h1 class="hero-title">Assista onde quiser. Cancele quando quiser.</h1>
@@ -39,10 +41,6 @@
             <button class="btn btn-outline">Explorar</button>
           </div>
         </div>
-        <div class="hero-visual" aria-hidden="true">
-          <!-- Imagem de destaque (placeholder) -->
-          <img src="assets/images/hero-placeholder.jpg" alt="Destaque"/>
-        </div>
       </div>
     </section>
 
@@ -51,27 +49,29 @@
       <div class="container">
         <h2 class="section-title">Popular na plataforma</h2>
         <div class="cards-grid">
-          <!-- Cada card representa um filme/série -->
+          <!-- Card de Filme -->
           <article class="card">
-            <img class="card-image" src="assets/images/card-1.jpg" alt="Título 1">
+            <img class="card-image" src="assets/images/filme1.jpg" alt="Filme 1">
             <div class="card-body">
-              <h3 class="card-title">Título 1</h3>
-              <p class="card-meta">2026 • Série</p>
+              <h3 class="card-title">Filme Destaque</h3>
+              <p class="card-meta">2026 • Filme</p>
             </div>
           </article>
 
+          <!-- Card de Série 1 -->
           <article class="card">
-            <img class="card-image" src="assets/images/card-2.jpg" alt="Título 2">
+            <img class="card-image" src="assets/images/serie1.jpg" alt="Série 1">
             <div class="card-body">
-              <h3 class="card-title">Título 2</h3>
-              <p class="card-meta">2025 • Filme</p>
+              <h3 class="card-title">Série Popular</h3>
+              <p class="card-meta">2025 • Série</p>
             </div>
           </article>
 
+          <!-- Card de Série 2 -->
           <article class="card">
-            <img class="card-image" src="assets/images/card-3.jpg" alt="Título 3">
+            <img class="card-image" src="assets/images/serie2.jpg" alt="Série 2">
             <div class="card-body">
-              <h3 class="card-title">Título 3</h3>
+              <h3 class="card-title">Série Clássica</h3>
               <p class="card-meta">2024 • Série</p>
             </div>
           </article>
