@@ -58,11 +58,11 @@
             trailerElement.classList.add('visible');
             trailerState.set(card, true);
           }
-        }, 3000); // 3 segundos
+        }, 2000); // 2 segundos
       });
 
       card.addEventListener('mouseleave', () => {
-        // Cancela timeout se mouse sair antes de 3 segundos
+        // Cancela timeout se mouse sair antes de 2 segundos
         clearTimeout(hoverTimeout);
 
         // Para o trailer e remove a visibilidade
