@@ -34,9 +34,58 @@
 
   // Aceita futuras ligações de eventos (busca, filtros, etc.)
   function bindEvents() {
+    // Inicializa sistema de trailers nos cards
+    initCardTrailers();
     // exemplo:
     // document.querySelector('.search-btn')?.addEventListener('click', onSearchClick);
   }
+
+  // Sistema de exibição de trailers com delay de 3 segundos (estilo Netflix)
+  function initCardTrailers() {
+    const cards = document.querySelectorAll('.card');
+    const trailerState = new Map(); // controla estado de cada card
+
+    cards.forEach((card) => {
+      const trailerElement = card.querySelector('.card-trailer');
+      let hoverTimeout = null;
+
+      card.addEventListener('mouseenter', () => {
+        // Aguarda 3 segundos antes de mostrar o trailer
+        hoverTimeout = setTimeout(() => {
+          if (trailerElement && trailerElement.src) {
+            // Garante que o vídeo toca em mute e modo automático
+            trailerElement.play().catch((e) => console.warn('Erro ao reproduzir trailer:', e));
+            trailerElement.classList.add('visible');
+            trailerState.set(card, true);
+          }
+        }, 3000); // 3 segundos
+      });
+
+      card.addEventListener('mouseleave', () => {
+        // Cancela timeout se mouse sair antes de 3 segundos
+        clearTimeout(hoverTimeout);
+
+        // Para o trailer e remove a visibilidade
+        if (trailerElement) {
+          trailerElement.pause();
+          trailerElement.currentTime = 0;
+          trailerElement.classList.remove('visible');
+          trailerState.set(card, false);
+        }
+      });
+    });
+  }
+
+  // Função para adicionar trailers manualmente (chamada após definir URLs no HTML)
+  window.StreamUI.setTrailer = function (cardIndex, trailerUrl, fileFormat = 'mp4') {
+    const cards = document.querySelectorAll('.card');
+    if (!cards[cardIndex]) return console.error('Card não encontrado');
+    const video = cards[cardIndex].querySelector('.card-trailer');
+    if (video) {
+      video.src = trailerUrl;
+      video.type = `video/${fileFormat}`;
+    }
+  };
 
   // Exemplo de função assíncrona preparada para buscar catálogo
   async function fetchCatalog() {
@@ -86,7 +135,8 @@
 
   // Expõe apenas init (se futuro módulo quiser chamar)
   window.StreamUI = {
-    init
+    init,
+    setTrailer: function () {} // placeholder (será definido em initCardTrailers)
   };
 
   // Inicializa automaticamente quando o DOM estiver pronto
