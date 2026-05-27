@@ -60,7 +60,21 @@ body {
   color: var(--text);
   font-weight: 700;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.35rem;
+  letter-spacing: -0.3px;
+  transition: all 220ms ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.logo:hover {
+  color: var(--accent);
+  transform: scale(1.05);
+}
+.logo-netflix {
+  color: var(--accent);
+  font-weight: 900;
+  font-style: italic;
 }
 .main-nav ul {
   display: flex;
