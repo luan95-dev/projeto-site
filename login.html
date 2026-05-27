@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login — StreamUI</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-login">
+  <header class="login-header">
+    <div class="container header-inner login-header-inner">
+      <a class="logo" href="login.html">StreamUI</a>
+      <p class="login-note">Acesse sua conta para continuar.</p>
+    </div>
+  </header>
+
+  <main class="login-main">
+    <div class="container login-layout">
+      <section class="login-panel glass-card">
+        <div class="login-content">
+          <h1>Faça login</h1>
+          <p class="login-subtitle">Entre com seu e-mail e senha para acessar o catálogo.</p>
+          <form class="login-form" action="index.html" method="get">
+            <label class="form-group">
+              <span>E-mail</span>
+              <input class="input-field" type="email" name="email" placeholder="seu@email.com" required>
+            </label>
+            <label class="form-group">
+              <span>Senha</span>
+              <input class="input-field" type="password" name="password" placeholder="Senha" required>
+            </label>
+            <button class="btn btn-primary btn-login" type="submit">Entrar</button>
+          </form>
+          <p class="login-hint">Não possui conta? O acesso ao catálogo será liberado após login.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="js/login.js" defer></script>
+</body>
+</html>
