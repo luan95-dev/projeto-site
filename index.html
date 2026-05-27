@@ -1,0 +1,95 @@
+<!doctype html>
+<!-- Página inicial do projeto inspirado na Netflix -->
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projeto — Streaming UI</title>
+  <!-- Conecta o CSS principal -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header semântico com logo e navegação simples -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">StreamUI</a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <ul>
+          <li><a href="#">Início</a></li>
+          <li><a href="#catalog">Séries</a></li>
+          <li><a href="#about">Sobre</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="search-btn" aria-label="Pesquisar">🔍</button>
+        <button class="profile-btn" aria-label="Perfil">👤</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero: destaque inicial -->
+    <section class="hero" id="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <h1 class="hero-title">Assista onde quiser. Cancele quando quiser.</h1>
+          <p class="hero-sub">Navegue por séries e filmes selecionados especialmente para você.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary">Assine agora</button>
+            <button class="btn btn-outline">Explorar</button>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <!-- Imagem de destaque (placeholder) -->
+          <img src="assets/images/hero-placeholder.jpg" alt="Destaque"/>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de cards de filmes/séries -->
+    <section class="catalog" id="catalog">
+      <div class="container">
+        <h2 class="section-title">Popular na plataforma</h2>
+        <div class="cards-grid">
+          <!-- Cada card representa um filme/série -->
+          <article class="card">
+            <img class="card-image" src="assets/images/card-1.jpg" alt="Título 1">
+            <div class="card-body">
+              <h3 class="card-title">Título 1</h3>
+              <p class="card-meta">2026 • Série</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="card-image" src="assets/images/card-2.jpg" alt="Título 2">
+            <div class="card-body">
+              <h3 class="card-title">Título 2</h3>
+              <p class="card-meta">2025 • Filme</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="card-image" src="assets/images/card-3.jpg" alt="Título 3">
+            <div class="card-body">
+              <h3 class="card-title">Título 3</h3>
+              <p class="card-meta">2024 • Série</p>
+            </div>
+          </article>
+
+          <!-- Mais cards... -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer simples -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 StreamUI — Projeto exemplo inspirado na Netflix</p>
+    </div>
+  </footer>
+
+  <!-- Conecta o JavaScript principal (defer via atributo) -->
+  <script src="js/script.js" defer></script>
+</body>
+</html>
