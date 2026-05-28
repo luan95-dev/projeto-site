@@ -12,7 +12,7 @@
   function handleSubmit(event) {
     event.preventDefault();
     // redireciona para a página principal após o envio do formulário
-    window.location.href = 'index.html';
+    window.location.href = 'home.html';
   }
 
   if (document.readyState === 'loading') {
