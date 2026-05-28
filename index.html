@@ -1,116 +1,43 @@
 <!doctype html>
-<!-- Página inicial do projeto inspirado na Netflix -->
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Netflix do Luan — Streaming</title>
-  <!-- Conecta o CSS principal -->
+  <title>Login — Netflix do Luan</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <!-- Header semântico com logo e navegação simples -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="#"><span class="logo-netflix">Netflix</span> do Luan</a>
-      <nav class="main-nav" aria-label="Navegação principal">
-        <ul>
-          <li><a href="#">Início</a></li>
-          <li><a href="#catalog">Séries</a></li>
-          <li><a href="#about">Sobre</a></li>
-        </ul>
-      </nav>
-      <div class="header-actions">
-        <button class="search-btn" aria-label="Pesquisar">🔍</button>
-        <button class="profile-btn" aria-label="Perfil">👤</button>
-      </div>
+<body class="page-login">
+  <header class="login-header">
+    <div class="container header-inner login-header-inner">
+      <a class="logo" href="index.html"><span class="logo-netflix">Netflix</span> do Luan</a>
+      <p class="login-note">Acesse sua conta para continuar.</p>
     </div>
   </header>
 
-  <main>
-    <!-- Hero: destaque inicial com imagem de fundo -->
-    <section class="hero" id="hero" style="background-image: url('assets/images/destaque.jpg');">
-      <!-- Overlay escuro para melhor legibilidade do texto -->
-      <div class="hero-overlay"></div>
-      <div class="container hero-inner">
-        <div class="hero-content">
-          <h1 class="hero-title">Assista onde quiser. Cancele quando quiser.</h1>
-          <p class="hero-sub">Navegue por séries e filmes selecionados especialmente para você.</p>
-          <div class="hero-actions">
-            <button class="btn btn-primary">Assine agora</button>
-            <button class="btn btn-outline">Explorar</button>
-          </div>
+  <main class="login-main">
+    <div class="container login-layout">
+      <section class="login-panel glass-card">
+        <div class="login-content">
+          <h1>Faça login</h1>
+          <p class="login-subtitle">Entre com seu e-mail e senha para acessar o catálogo.</p>
+          <form class="login-form" action="home.html" method="get">
+            <label class="form-group">
+              <span>E-mail</span>
+              <input class="input-field" type="email" name="email" placeholder="seu@email.com" required>
+            </label>
+            <label class="form-group">
+              <span>Senha</span>
+              <input class="input-field" type="password" name="password" placeholder="Senha" required>
+            </label>
+            <button class="btn btn-primary btn-login" type="submit">Entrar</button>
+          </form>
+          <p class="login-hint">Não possui conta? O acesso ao catálogo será liberado após login.</p>
         </div>
-      </div>
-    </section>
-
-    <!-- Seção de cards de filmes/séries -->
-    <section class="catalog" id="catalog">
-      <div class="container">
-        <h2 class="section-title">Popular na plataforma</h2>
-        <div class="cards-grid">
-          <!-- Card de Filme com suporte a trailer -->
-          <article class="card" data-trailer="">
-            <!-- INSTRUÇÃO: adicione o URL do trailer aqui -->
-            <!-- Exemplo: data-trailer="https://www.youtube.com/embed/video-id?autoplay=1&mute=1" -->
-            <img class="card-image" src="assets/images/filme1.jpg" alt="Filme 1">
-            <video class="card-trailer"
-            src="assets/videos/carros1.mp4"
-            muted
-            preload="none">
-          </video>
-            <div class="card-body">
-              <h3 class="card-title">filme</h3>
-              <p class="card-meta">2026 • Filme</p>
-            </div>
-          </article>
-
-          <!-- Card de Série 1 com suporte a trailer -->
-          <article class="card" data-trailer="">
-            <!-- INSTRUÇÃO: adicione o URL do trailer aqui -->
-            <img class="card-image" src="assets/images/serie1.jpg" alt="Série 1">
-            <video class="card-trailer"
-            src="assets/videos/trailer1.mp4"
-            muted
-            preload="none">
-          </video>
-            <div class="card-body">
-              <h3 class="card-title">Série Popular</h3>
-              <p class="card-meta">2025 • Série</p>
-            </div>
-          </article>
-
-          <!-- Card de Série 2 com suporte a trailer -->
-          <article class="card" data-trailer="">
-            <!-- INSTRUÇÃO: adicione o URL do trailer aqui -->
-            <img class="card-image" src="assets/images/serie2.jpg" alt="Série 2">
-            <video class="card-trailer"
-            src="assets/videos/icarly1.mp4"
-            muted
-            preload="none">
-          </video>
-            <div class="card-body">
-              <h3 class="card-title">Série Clássica</h3>
-              <p class="card-meta">2024 • Série</p>
-            </div>
-          </article>
-
-          <!-- Mais cards... -->
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 
-  <!-- Footer simples -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© 2026 StreamUI — Projeto exemplo inspirado na Netflix</p>
-    </div>
-  </footer>
-
-  <!-- Conecta o JavaScript principal (defer via atributo) -->
-  <script src="js/script.js" defer></script>
+  <script src="js/login.js" defer></script>
 </body>
 </html>
-
 
